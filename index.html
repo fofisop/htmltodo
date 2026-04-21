@@ -1,9 +1,24 @@
-
 <html>
+    <center>
 <head>
+
   <title>To do list</title>
 
   <style>
+    .b{
+  width: 100px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  back;
+
+}
+    body{
+         transform: scale(1.3);
+  transform-origin: center;
+        background-image: url(moc.jpeg);
+        color: #3b2a26; 
+    }
     input[type="checkbox"] {
       accent-color: #8d6e63;
       transform: scale(1.5);
@@ -32,6 +47,8 @@
 </head>
 
 <body>
+    <br>
+    <br> <br> <br> <Br> <br>
 
 <h1>To do list</h1>
 
@@ -41,7 +58,10 @@
 <ul id="list"></ul>
 
 <script>
+    
+  
 function add() {
+   
   let input = document.getElementById("taskInput");
   let text = input.value;
 
@@ -59,9 +79,12 @@ function add() {
   btn.innerText = "X";
   btn.onclick = function() {
     li.remove();
+  
   };
 
-
+  checkbox.onchange = function() {
+  span.style.textDecoration = this.checked ? "line-through" : "none";
+};
   li.appendChild(span);
   li.appendChild(checkbox);
   li.appendChild(btn);
@@ -71,6 +94,7 @@ function add() {
   input.value = "";
 }
 </script>
-
+<img src="b.png" class="b">
 </body>
+    </center>
 </html>
