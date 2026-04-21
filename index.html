@@ -1,0 +1,76 @@
+
+<html>
+<head>
+  <title>To do list</title>
+
+  <style>
+    input[type="checkbox"] {
+      accent-color: #8d6e63;
+      transform: scale(1.5);
+    }
+
+    input {
+      background: #f5e6d3;
+    }
+
+    button {
+      background: #8d6e63;
+      color: #f5e6d3;
+      border: none;
+      padding: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>To do list</h1>
+
+<input id="taskInput" placeholder="Enter a task">
+<button onclick="add()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+function add() {
+  let input = document.getElementById("taskInput");
+  let text = input.value;
+
+  if (text === "") return;
+
+  let li = document.createElement("li");
+
+  let span = document.createElement("span");
+  span.innerText = text;
+
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+
+  let btn = document.createElement("button");
+  btn.innerText = "X";
+  btn.onclick = function() {
+    li.remove();
+  };
+
+
+  li.appendChild(span);
+  li.appendChild(checkbox);
+  li.appendChild(btn);
+
+  document.getElementById("list").appendChild(li);
+
+  input.value = "";
+}
+</script>
+
+</body>
+</html>
