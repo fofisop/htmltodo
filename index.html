@@ -16,7 +16,7 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
-  
+  z-index: -1;
 
 }
 span {
@@ -37,19 +37,27 @@ button {
   padding: 8px 12px;
   font-size: 16px;
 }
+button:hover {
+  opacity: 0.85;
+}
+
+li:hover {
+  transform: scale(1.03);
+}
     body {
   margin: 0;
   height: 100vh;
-ul {
-  padding: 0;
-  margin: 0;
-}
+
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-image: url(moc.jpeg);
   color: #3b2a26;
+}
+ul {
+  padding: 0;
+  margin: 0;
 }
     input[type="checkbox"] {
       accent-color: #8d6e63;
@@ -107,6 +115,7 @@ function add() {
   if (text === "") return;
 
   let li = document.createElement("li");
+  li.style.background = ["#fff8f0", "#fcefe3", "#f9e4d4"][Math.floor(Math.random()*3)];
 
   let span = document.createElement("span");
   span.innerText = text;
@@ -163,6 +172,12 @@ function loadTasks() {
     }
   });
 }
+document.getElementById("taskInput").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    add();
+  }
+});
+
 loadTasks();
 </script>
 <img src="b.png" class="b">
