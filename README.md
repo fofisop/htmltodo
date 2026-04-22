@@ -1,1 +1,1 @@
-# htmltodo
+This is an aesthetic to do list website! This cozy beige vibe (ligth acadamia) is one of my favorite aesthetics, so I wanted to make a website with the theme! I learned some really cool CSs in this project!
